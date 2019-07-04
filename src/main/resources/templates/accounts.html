@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Spring Boot Exemple</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <div th:if="${not #lists.isEmpty(accounts)}">
+        <h2>Account List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Serial Number</th>
+                <th>Bank Account Id</th>
+                <th>Bank Account Name</th>
+                <th>Bank</th>
+                <th>View</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr th:each="account : ${accounts}">
+                <td th:text="${account.id}"><a href="/account/${account.id}">Id</a></td>
+                <td th:text="${account.accountId}">Bank Account Id</td>
+                <td th:text="${account.name}">descirption</td>
+                <td th:text="${account.bank}">bank</td>
+                <td><a th:href="${ '/account/' + account.id}">View</a></td>
+                <td><a th:href="${'/account/edit/' + account.id}">Edit</a></td>
+                <td><a th:href="${'/account/delete/' + account.id}">Delete</a></td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+</body>
+</html>

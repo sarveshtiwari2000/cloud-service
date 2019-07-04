@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Spring Boot Exemple</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+
+    <h2>Bank Account Details</h2>
+        <div>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Bank Account Id:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${account.id}">Bank Account Id</p></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Account Name:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${account.name}">Account Name</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Bank:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${account.bank}">Bank</p>
+                    </div>
+                </div>
+            </form>
+    </div>
+</div>
+
+</body>
+</html>
